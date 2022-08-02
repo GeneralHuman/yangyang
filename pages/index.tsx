@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>양양 인포</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -12,7 +12,7 @@ export default function Home() {
         <h1 className="text-6xl font-bold">
           Welcome to{" "}
           <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
+            양양!
           </a>
         </h1>
 
