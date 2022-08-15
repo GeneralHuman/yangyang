@@ -22,9 +22,15 @@ export default function App({ Component, pageProps }: AppProps) {
           crossOrigin="anonymous"
         />
         <Script
-          async={true}
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8906150045811493"
+          id="Adsense-id"
+          async
+          strategy="afterInteractive"
+          data-ad-client="ca-pub-8906150045811493"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           crossOrigin="anonymous"
+          onError={(e) => {
+            console.error("Google Script failed to load", e);
+          }}
         />
       </Head>
       <Component {...pageProps} />
