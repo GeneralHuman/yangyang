@@ -4,21 +4,22 @@ import Document, {
   Main,
   NextScript,
   DocumentContext,
-} from 'next/document'
+} from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
     const meta = {
-      title: 'Next.js Blog Starter Kit',
-      description: 'Clone and deploy your own Next.js portfolio in minutes.',
+      title: "Next.js Blog Starter Kit",
+      description: "Clone and deploy your own Next.js portfolio in minutes.",
       image:
-        'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png',
-    }
+        "https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png",
+    };
 
     return (
       <Html lang="ko">
@@ -40,8 +41,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;
