@@ -21,18 +21,37 @@ export default function App({ Component, pageProps }: AppProps) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <Script
-          id="Adsense-id"
-          async
-          strategy="afterInteractive"
-          data-ad-client="ca-pub-8906150045811493"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          crossOrigin="anonymous"
-          onError={(e) => {
-            console.error("Google Script failed to load", e);
-          }}
-        />
       </Head>
+      <Script
+        id="Adsense-id"
+        async={true}
+        strategy="afterInteractive"
+        data-ad-client="ca-pub-8906150045811493"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        crossOrigin="anonymous"
+        onError={(e) => {
+          console.error("Google Script failed to load", e);
+        }}
+      />
+      {/* Global site tag (gtag.js) - Google Analytics */}
+      <Script
+        id="gtagManagerScript"
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-0C9748ZBEZ"
+      />
+      <Script
+        id="gtagScript"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+              
+                gtag('config', 'G-0C9748ZBEZ');
+            `,
+        }}
+      />
       <Component {...pageProps} />
     </>
   );
