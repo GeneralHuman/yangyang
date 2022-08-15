@@ -35,17 +35,6 @@ class MyDocument extends Document {
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
-          <Script
-            id="Adsense-id"
-            async
-            strategy="afterInteractive"
-            data-ad-client="ca-pub-8906150045811493"
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-            crossOrigin="anonymous"
-            onError={(e) => {
-              console.error("Google Script failed to load", e);
-            }}
-          />
         </Head>
         <body>
           <Main />
